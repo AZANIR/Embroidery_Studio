@@ -105,6 +105,37 @@ export const useCMSStore = () => {
     return newOrder;
   };
 
+  const generateDemoData = () => {
+    const demoOrder: Order = {
+      id: 'ORD-DEMO1',
+      date: new Date().toISOString(),
+      status: 'pending',
+      total: 2500,
+      paymentMethod: 'card',
+      items: [{ ...INITIAL_PRODUCTS[0], quantity: 1 }, { ...INITIAL_PRODUCTS[1], quantity: 1 }],
+      customer: {
+        name: 'Олексій Тестовий',
+        email: 'test@example.com',
+        phone: '+380 99 999 99 99',
+        city: 'Київ',
+        address: 'Відділення №1'
+      }
+    };
+    setOrders(prev => [demoOrder, ...prev]);
+    
+    const demoInquiry: Inquiry = {
+      id: 'inq-demo',
+      date: new Date().toISOString(),
+      status: 'new',
+      name: 'Марина Дизайнер',
+      email: 'marina@design.com',
+      service: 'Корпоративна вишивка',
+      quantity: 50,
+      message: 'Цікавить вишивка логотипу на 50 худі для IT-компанії.'
+    };
+    setInquiries(prev => [demoInquiry, ...prev]);
+  };
+
   const addInquiry = (inquiry: Omit<Inquiry, 'id' | 'date' | 'status'>) => {
     const newInquiry: Inquiry = {
       ...inquiry,
@@ -129,6 +160,7 @@ export const useCMSStore = () => {
     orders, setOrders, addOrder,
     inquiries, setInquiries,
     addInquiry,
+    generateDemoData,
     t
   };
 };

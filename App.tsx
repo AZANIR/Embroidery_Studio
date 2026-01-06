@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useState } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingCart, Globe, Trash2, Plus, Minus, ArrowRight } from 'lucide-react';
+import { Menu, X, ShoppingCart, Globe, Trash2, Plus, Minus, ArrowRight, Lock } from 'lucide-react';
 import { useCMSStore } from './store';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -204,8 +204,14 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-[#e7e3da] pt-8 text-center text-[10px] text-[#888] font-black uppercase tracking-[0.3em]">
-          © {new Date().getFullYear()} {settings.name}. Artistry in every stitch.
+        <div className="border-t border-[#e7e3da] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-[10px] text-[#888] font-black uppercase tracking-[0.3em]">
+            © {new Date().getFullYear()} {settings.name}. Artistry in every stitch.
+          </div>
+          <Link to="/admin" className="flex items-center gap-2 text-[10px] text-[#888] hover:text-[#ff6b35] transition-colors font-black uppercase tracking-widest">
+            <Lock size={10} />
+            Admin Panel
+          </Link>
         </div>
       </div>
     </footer>
