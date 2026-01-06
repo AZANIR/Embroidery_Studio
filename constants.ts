@@ -82,20 +82,6 @@ export const INITIAL_SERVICES: Service[] = [
     description: { uk: 'Оптові замовлення для компаній з вигідними умовами', en: 'Bulk orders for companies with favorable terms' }, 
     icon: 'FileText', 
     priceRange: 'Custom' 
-  },
-  { 
-    id: '5', 
-    name: { uk: 'Ремонт та реставрація', en: 'Repair & Restoration' }, 
-    description: { uk: 'Відновлення старих вишивок та ремонт пошкоджених виробів', en: 'Restoration of old embroideries and repair of damaged items' }, 
-    icon: 'PenTool', 
-    priceRange: 'Custom' 
-  },
-  { 
-    id: '6', 
-    name: { uk: 'Консультації', en: 'Consultations' }, 
-    description: { uk: 'Безкоштовні консультації щодо вибору матеріалів та дизайну', en: 'Free consultations on material selection and design' }, 
-    icon: 'CheckSquare', 
-    priceRange: 'Free' 
   }
 ];
 
